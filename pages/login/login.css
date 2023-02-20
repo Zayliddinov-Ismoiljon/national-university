@@ -1,0 +1,125 @@
+.vid-container {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+.bgvid.back {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -100;
+}
+.inner {
+	position: absolute;
+}
+.inner-container {
+	width: 30%;
+	height: 500px;
+	position: absolute;
+	top: calc(15vh);
+	left: calc(70vh);
+	overflow: hidden;
+	border-radius: 1rem;
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+.bgvid.inner {
+	top: calc(-50vh + 100px);
+	left: calc(-50vw + 100px);
+	filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+	-webkit-filter: blur(10px);
+	-ms-filter: blur(10px);
+	-o-filter: blur(10px);
+	filter: blur(10px);
+}
+.box {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	font-family: Helvetica;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.13);
+	/* padding:10px 0px; */
+	border-radius: 1rem;
+	backdrop-filter: blur(10px);
+}
+
+.box h1 {
+	text-align: center;
+	margin: 30px 0;
+	font-size: 30px;
+}
+.box input {
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+	padding: 10px;
+	background: rgba(0, 0, 0, 0.2);
+	color: #666;
+	border: 0;
+	border-radius: 5px;
+}
+.box input:focus,
+.box input:active,
+.box button:focus,
+.box button:active {
+	outline: none;
+}
+.box button {
+	background: #742ecc;
+	border: 0;
+	color: #fff;
+	padding: 10px;
+	font-size: 20px;
+	width: 100%;
+	margin: 20px auto;
+	display: block;
+	cursor: pointer;
+	border-radius: 5px;
+}
+.box button:active {
+	background: #27ae60;
+}
+.box p {
+	font-size: 14px;
+	text-align: center;
+}
+.box p {
+	cursor: pointer;
+	color: #fff;
+}
+
+.register-link {
+	color: #dc3545;
+}
+
+/* Responsiv start */
+
+@media only screen and (max-width: 425px) {
+	.vid-container {
+		width: 100%;
+	}
+  
+	.inner-container {
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+		top: calc(10vh);
+    left: calc(3vh);
+	}
+
+	.box input{
+		font-size: 14px;
+		padding: 5px;
+		margin-bottom: 0;
+	}
+
+	.box button{
+		font-size: 14px;
+		margin: 10px 0px;
+	}
+}

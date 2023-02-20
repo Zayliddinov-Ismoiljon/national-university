@@ -1,0 +1,45 @@
+.appbar-item{
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 7px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.appbar-item:hover{
+  background-color: rgb(237, 235, 235);
+}
+
+/* Responsive start */
+
+@media only screen and (max-width:425px){
+  .appbar-item{
+    font-size: 12px;
+  }
+
+  .appbar-icon icon{
+    width: 10px;
+    height: 10px;
+  }
+
+  .appbar-list{
+    position: fixed;
+    top:0px;
+    left: 0;
+    width: 0;
+    /* height: 280px; */
+    background: #3d3df7;
+    z-index: 11111;
+    overflow: hidden;
+    transition: 0.5s ease-out;
+  }
+  
+  .appbar-list.active{
+    width: 250px;
+    padding: 1rem 1rem;
+  }
+}

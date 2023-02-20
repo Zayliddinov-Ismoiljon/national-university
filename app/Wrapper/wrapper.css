@@ -1,0 +1,41 @@
+.appbar-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.appbar-inner>h3{
+  color: white;
+  font-size: 24px;
+}
+
+.wrapper-body{
+  display: flex;
+}
+
+.wrapper-burger{
+  display: none;
+}
+
+/* Responsive start */
+
+@media only screen and (max-width:425px){
+  .wrapper-body{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .appbar-inner{
+    margin-bottom: 8px;
+  }
+
+  .appbar-inner>icon{
+    width: 10px;
+    height: 10px;
+  }
+
+  .wrapper-burger{
+    display: block;
+  }
+}

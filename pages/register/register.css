@@ -1,0 +1,171 @@
+
+.register-main {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	color: aliceblue;
+	align-items: center;
+	background-image: url('https://github.com/DwinaTech/public-images/blob/main/background/Nature-Background.jpeg?raw=true');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	padding: 36px 0px;
+}
+
+.register-container {
+	/* width: 100%; */
+	/* height: 100%; */
+	padding: 42px 10px;
+	display: flex;
+	margin: 50px auto;
+	border-radius: 5px 100px;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#square {
+	display: flex;
+	min-width: 350px;
+	min-height: 550px;
+	margin-bottom: 0px;
+	justify-content: center;
+	transform-style: preserve-3d;
+	transition: all 0.3s ease-in;
+	box-shadow: 3px 3px 5px #012a4a;
+}
+
+.front,
+.right,
+.left {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	display: flex;
+	border-radius: 5px;
+	/* position: absolute; */
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #013a63;
+	box-shadow: 3px 3px 5px #012a4a;
+}
+
+.front {
+	transform: translateZ(50px);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(50px);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(50px);
+}
+
+.actions button {
+	border: 0;
+	outline: none;
+	font-size: 18px;
+	min-height: 20px;
+	padding: 5px 10px;
+	border-radius: 4px;
+	background-color: aqua;
+}
+
+.register-container h1 {
+	font-size: 35px;
+	margin-bottom: 15px;
+}
+
+.register-container Form {
+	width: 100%;
+	/* flex-direction: column; */
+}
+
+.register-container form input,
+.register-container form button,
+.register-container form h5 {
+	margin-bottom: 0px;
+}
+
+.register-container form input {
+	border: 0;
+	padding: 5px 8px;
+	width: 100%;
+	min-height: 20px;
+	font-size: 18px;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.register-container form button {
+	border: 0;
+	padding: 10px 0;
+	outline: none;
+	min-height: 20px;
+	font-size: 18px;
+	border-radius: 4px;
+	background-color: aqua;
+}
+
+#frontSide {
+	display: none;
+}
+
+.register-container .actions button {
+	margin-right: 10px;
+}
+
+.register-container {
+	width: 400px;
+	/* padding: 50px 100px; */
+	background-image: linear-gradient(to top, #012a4a, #01497c, #89c2d9);
+	/* backdrop-filter: blur(10px); */
+}
+
+#rightSide {
+	padding: 10px;
+	display: block;
+	width: 100%;
+}
+
+/* Responsiv start */
+
+@media only screen and (max-width:425px){
+  .register-main{
+    width: 100%;
+    height: auto;
+  }
+
+  .register-container{
+    width: 90%;
+  }
+
+	/* .register-container h1{
+		margin-bottom: 20px;
+	} */
+
+  #square{
+    min-width: 75vw;
+    min-height: 75vh;
+  }
+
+  .front{
+    padding: 10px;
+  }
+
+  .register-container form input{
+    padding: 3px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .register-container form button{
+    font-size: 14px;
+  }
+
+  .actions span{
+    font-size: 14px;
+  }
+}
