@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Layout from '../../app/Layout/index';
 import { Button, Col, Divider, Form, Input, Row } from 'antd';
+import { BASE_URL } from '../api';
 
 export default function MyInfotmation() {
 	const [form] = Form.useForm();
@@ -20,7 +21,7 @@ export default function MyInfotmation() {
 			};
 
 			fetch(
-				'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/me',
+				`${BASE_URL}/api/v1/auth/me`,
 				options,
 			)
 				.then((response) => response.json())
@@ -52,7 +53,7 @@ export default function MyInfotmation() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/update',
+			`${BASE_URL}/api/v1/auth/update`,
 			options,
 		)
 			.then((response) => response.json())

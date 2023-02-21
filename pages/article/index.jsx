@@ -5,6 +5,7 @@ import Layout from '../../app/Layout/index';
 import { Divider, Table } from 'antd';
 import { Form, Button, Input, Select } from 'antd';
 import moment from 'moment';
+import { BASE_URL } from '../api';
 
 export default function Article() {
 	const [ form ] = Form.useForm();
@@ -49,7 +50,7 @@ export default function Article() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/getAll',
+			`${BASE_URL}/api/v1/session/getAll`,
 			options,
 		)
 			.then((response) => response.json())
@@ -70,7 +71,7 @@ export default function Article() {
 			};
 
 			fetch(
-				'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/getAllByUser',
+				`${BASE_URL}/api/v1/article/getAllByUser`,
 				options,
 			)
 				.then((response) => response.json())
@@ -110,7 +111,7 @@ export default function Article() {
 		};
 
 		fetch(
-			`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/create`,
+			`${BASE_URL}/api/v1/article/create`,
 			options,
 		)
 			.then((response) => response.json())
@@ -131,7 +132,7 @@ export default function Article() {
 				};
 
 				fetch(
-					`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/upload/${Number(
+					`${BASE_URL}/api/v1/article/upload/${Number(
 						id,
 					)}`,
 					options,
@@ -158,7 +159,7 @@ export default function Article() {
 			},
 		};
 
-		fetch(`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/delete/${id}`, options)
+		fetch(`${BASE_URL}/api/v1/article/delete/${id}`, options)
 			.then((response) => response.json())
 			.then((data) => {
 				console.log('deleteData', data);

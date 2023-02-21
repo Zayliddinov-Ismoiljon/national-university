@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Header from '../../app/Header/index';
 import { Image } from 'next/image';
+import { BASE_URL } from '../api';
 
 function MainExposure() {
 	const [mainexposure, setMainexposure] = useState([]);
@@ -14,7 +15,7 @@ function MainExposure() {
 		};
 
 		fetch(
-			`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/getAll`,
+			`${BASE_URL}/api/v1/speaker/getAll`,
 			options,
 		)
 			.then((response) => response.json())

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Form, message } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { BASE_URL } from '../api';
 
 const Register = () => {
 	const [register, setRegister] = useState([]);
@@ -22,7 +23,7 @@ const Register = () => {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/register',
+			`${BASE_URL}/api/v1/auth/register`,
 			options,
 		)
 			.then((response) => {

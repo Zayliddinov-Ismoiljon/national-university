@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Button, Divider, Form } from 'antd';
 import Wrapper from '../../app/Wrapper/index';
 import { Image } from 'next/image';
+import { BASE_URL } from '../api';
 
 export default function MediaCreate() {
 	const [form] = Form.useForm();
@@ -17,7 +18,7 @@ export default function MediaCreate() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/media/getAll',
+			`${BASE_URL}/api/v1/media/getAll`,
 			options,
 		)
 			.then((response) => response.json())
@@ -44,7 +45,7 @@ export default function MediaCreate() {
 			};
 
 			fetch(
-				'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/media/upload',
+				`${BASE_URL}/api/v1/media/upload`,
 				options,
 			)
 				.then((response) => response.json())
@@ -67,7 +68,7 @@ export default function MediaCreate() {
 			};
 
 			fetch(
-				`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/media/delete/${id}`,
+				`${BASE_URL}/api/v1/media/delete/${id}`,
 				options
 			)
 				.then((response) => response.json())

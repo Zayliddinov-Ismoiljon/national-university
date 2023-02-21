@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Button, Divider, Form, Input, Select, Table } from 'antd';
 import Wrapper from '../../app/Wrapper/index';
 import {Image} from 'next/image';
+import { BASE_URL } from '../api';
 const { TextArea } = Input;
 
 function SpekearsCreate() {
@@ -18,7 +19,7 @@ function SpekearsCreate() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/getAll',
+			`${BASE_URL}/api/v1/speaker/getAll`,
 			options,
 		)
 			.then((response) => response.json())
@@ -38,7 +39,7 @@ function SpekearsCreate() {
 		};
 
 		await fetch(
-			`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/delete/${id}`,
+			`${BASE_URL}/api/v1/speaker/delete/${id}`,
 			options,
 		)
 			.then((response) => response.json())
@@ -107,7 +108,7 @@ function SpekearsCreate() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/create',
+			`${BASE_URL}/api/v1/speaker/create`,
 			options,
 		)
 			.then((response) => response.json())
@@ -128,7 +129,7 @@ function SpekearsCreate() {
 				};
 
 				fetch(
-					`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/uploadPhoto/${Number(id)}`,
+					`${BASE_URL}/api/v1/speaker/uploadPhoto/${Number(id)}`,
 					options,
 				)
 					.then((response) => response.json())

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Divider, Table } from 'antd';
 import moment from 'moment';
 import Wrapper from '../../app/Wrapper/index';
+import { BASE_URL } from '../api';
 
 function ArticleCheck() {
 	const [articleCheck, setArticleCheck] = useState([]);
@@ -56,7 +57,7 @@ function ArticleCheck() {
 			};
 
 			fetch(
-				'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/getAll',
+				`${BASE_URL}/api/v1/article/getAll`,
 				options,
 			)
 				.then((response) => response.json())
@@ -106,7 +107,7 @@ function ArticleCheck() {
 		};
 
 		fetch(
-			`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/article/check/${id}`,
+			`${BASE_URL}/api/v1/article/check/${id}`,
 			options,
 		)
 			.then((response) => response.json())

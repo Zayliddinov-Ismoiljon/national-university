@@ -3,6 +3,7 @@
 import React, { useState,useEffect  } from 'react';
 import Header from '../../app/Header/index';
 import { Image } from 'next/image';
+import { BASE_URL } from '../api';
 
 function Session() {
 	const [speakers, setSpeakers] = useState([]);
@@ -14,7 +15,7 @@ function Session() {
 		};
 
 		fetch(
-			`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/getAll`,
+			`${BASE_URL}/api/v1/speaker/getAll`,
 			options,
 		)
 			.then((reponse) => reponse.json())

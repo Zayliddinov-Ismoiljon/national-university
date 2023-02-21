@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Image } from 'next/image';
 import Header from '../../app/Header/index';
+import { BASE_URL } from '../api';
 
 function SugestedExposure() {
 	const [sugestSpeakers, setSugestSpeakers] = useState([]);
@@ -14,7 +15,7 @@ function SugestedExposure() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/speaker/getAllInvited',
+			`${BASE_URL}/api/v1/speaker/getAllInvited`,
 			options,
 		)
 			.then((response) => response.json())

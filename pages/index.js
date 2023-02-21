@@ -4,6 +4,7 @@ import Image from "next/image";
 import { GoSettings } from 'react-icons/go';
 import Header from "../app/Header";
 import Link from "next/link";
+import { BASE_URL } from "./api";
 
 export default function Home() {
 	const [sessions, setSessions] = useState([]);
@@ -15,7 +16,7 @@ export default function Home() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/getAll',
+			`${BASE_URL}/api/v1/session/getAll`,
 			options,
 		)
 			.then((response) => response.json())

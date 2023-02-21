@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Header from "../../app/Header";
+import { BASE_URL } from "../api";
 
 function Media() {
 	const [media, setMedia] = useState([]);
@@ -13,7 +14,7 @@ function Media() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/media/getAll',
+			`${BASE_URL}/api/v1/media/getAll`,
 			options,
 		)
 			.then((response) => response.json())

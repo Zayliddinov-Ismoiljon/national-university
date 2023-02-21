@@ -3,6 +3,7 @@
 import { useEffect, useState  } from 'react';
 import { Divider, Table } from 'antd'
 import Wrapper from '../../app/Wrapper/index'
+import { BASE_URL } from '../api';
 
 function Users(){
 
@@ -54,7 +55,7 @@ function Users(){
       };
 
       fetch(
-        'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/getAll',
+        `${BASE_URL}/api/v1/auth/getAll`,
         options,
       )
         .then((response) => response.json())

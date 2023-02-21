@@ -5,6 +5,7 @@ import Layout from '../../app/Layout/index';
 import { Divider, Table } from 'antd';
 import Link from 'next/link';
 import moment from 'moment/moment';
+import { BASE_URL } from '../api';
 
 export default function SessionTable() {
 
@@ -16,7 +17,7 @@ export default function SessionTable() {
       headers:{}
     }
 
-    fetch('http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/getAll', options)
+    fetch(`${BASE_URL}/api/v1/session/getAll`, options)
     .then(response=>response.json())
     .then(data=>{
       console.log('tableData', data);

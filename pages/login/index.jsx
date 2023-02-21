@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Form, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { BASE_URL } from "../api";
 
 
 function Login () {
@@ -23,7 +24,7 @@ function Login () {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/login',
+			`${BASE_URL}/api/v1/auth/login`,
 			options,
 		)
 			.then((response) => {
@@ -53,7 +54,7 @@ function Login () {
 		};
 
 		await fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/auth/me',
+			`${BASE_URL}/api/v1/auth/me`,
 			checkMe,
 		)
 			.then((response) => {

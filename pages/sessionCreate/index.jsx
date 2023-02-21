@@ -3,6 +3,7 @@
 import { useState, useEffect  } from 'react';
 import { Button, Divider, Form, Input, Table } from 'antd';
 import Wrapper from '../../app/Wrapper/index';
+import { BASE_URL } from '../api';
 
 export default function ArticleCreate() {
 	const [form] = Form.useForm();
@@ -16,7 +17,7 @@ export default function ArticleCreate() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/getAll',
+			`${BASE_URL}/api/v1/session/getAll`,
 			options,
 		)
 			.then((response) => response.json())
@@ -39,7 +40,7 @@ export default function ArticleCreate() {
 		};
 
 		fetch(
-			'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/create',
+			`${BASE_URL}/api/v1/session/create`,
 			options,
 		)
 			.then((response) => response.json())
@@ -61,7 +62,7 @@ export default function ArticleCreate() {
 			},
 		};
 
-		await fetch(`http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080/api/v1/session/delete/${id}`, options)
+		await fetch(`${BASE_URL}/api/v1/session/delete/${id}`, options)
 			.then((response) => response.json())
 			.then((data) => {
 				console.log('deleteData', data);
