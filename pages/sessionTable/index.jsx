@@ -20,7 +20,6 @@ export default function SessionTable() {
     fetch(`${BASE_URL}/api/v1/session/getAll`, options)
     .then(response=>response.json())
     .then(data=>{
-      console.log('tableData', data);
       setTable(data.body)
     })
   },[])
@@ -42,9 +41,6 @@ export default function SessionTable() {
     },
   ];
 
-  table.map((item)=>{
-    console.log('item', item);
-  })
 
   const data =table.map(data=>(
     {

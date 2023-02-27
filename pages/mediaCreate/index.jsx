@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import { Button, Divider, Form } from 'antd';
 import Wrapper from '../../app/Wrapper/index';
-import { Image } from 'next/image';
 import { BASE_URL } from '../api';
 
 export default function MediaCreate() {
@@ -17,10 +16,7 @@ export default function MediaCreate() {
 			headers: {},
 		};
 
-		fetch(
-			`${BASE_URL}/api/v1/media/getAll`,
-			options,
-		)
+		fetch(`${BASE_URL}/api/v1/media/getAll`, options)
 			.then((response) => response.json())
 			.then((data) => {
 				setSpekearsImg(data.body);
@@ -28,56 +24,46 @@ export default function MediaCreate() {
 	}, [reFtch]);
 
 	const onSubmit = (values) => {
-		console.log('values', values);
-		if (typeof window !== 'undifined') {
-			const token = localStorage.getItem('token');
+		const token = localStorage.getItem('token');
+		// const token = localStorage.getItem('token');
 
-			const formData = new FormData();
-			const file = document.querySelector('input[type="file"]').files[0];
-			formData.append('file', file);
+		const formData = new FormData();
+		const file = document.querySelector('input[type="file"]').files[0];
+		formData.append('file', file);
 
-			const options = {
-				method: 'POST',
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-				body: formData,
-			};
+		const options = {
+			method: 'POST',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+			body: formData,
+		};
 
-			fetch(
-				`${BASE_URL}/api/v1/media/upload`,
-				options,
-			)
-				.then((response) => response.json())
-				.then((data) => {
-					setReFetch((p) => !p);
-					form.resetFields()
-				});
-		}
+		fetch(`${BASE_URL}/api/v1/media/upload`, options)
+			.then((response) => response.json())
+			.then((data) => {
+				setReFetch((p) => !p);
+				form.resetFields();
+			});
 	};
 
 	const imgDelete = (id) => {
-		if (typeof window !== 'undifined') {
-			const token = localStorage.getItem('token');
-			const options = {
-				method: 'DELETE',
-				headers: {
-					Authorization: `Bearer ${token}`,
-					'My-Custom-Header': 'foobar',
-				},
-			};
+		// const token = localStorage.getItem('token');
+		const options = {
+			method: 'DELETE',
+			headers: {
+				Authorization: `Bearer ${token}`,
+				'My-Custom-Header': 'foobar',
+			},
+		};
 
-			fetch(
-				`${BASE_URL}/api/v1/media/delete/${id}`,
-				options
-			)
-				.then((response) => response.json())
-				.then((data) => {
-					if (data.status == 200) {
-						setReFetch((p) => !p);
-					}
-				});
-		}
+		fetch(`${BASE_URL}/api/v1/media/delete/${id}`, options)
+			.then((response) => response.json())
+			.then((data) => {
+				if (data.status == 200) {
+					setReFetch((p) => !p);
+				}
+			});
 	};
 
 	return (
@@ -98,9 +84,9 @@ export default function MediaCreate() {
 			</Form>
 			<Divider>Barcha medialar</Divider>
 			<ul className='media_list'>
-				{spekearsImg.map((item, i) => (
+				{spekearsImg?.map((item, i) => (
 					<li className='media_item' key={i} xs={24} sm={12} md={6} lg={6}>
-						<Image className='media_img' src={item.path} alt='image' />
+						{/* <Image className='media_img' src={item.path} alt='image' /> */}
 						<Button
 							onClick={() => imgDelete(item?.id)}
 							htmlType='button'

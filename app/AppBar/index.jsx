@@ -10,8 +10,11 @@ import { Button } from 'antd';
 import { MdAdminPanelSettings } from 'react-icons/md';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 function AppBar() {
+	const router = useRouter();
+	const [burgerToggle, setBurgerToggle] = useState(false);
 	const exit = () => {
 		localStorage.clear('token');
 	};
@@ -66,7 +69,12 @@ function AppBar() {
 			icon: <BiLogOutCircle size={30} />,
 		},
 	];
-	const [burgerToggle, setBurgerToggle] = useState(false);
+
+	const style = {
+		color: 'rgb(4, 4, 4)', 
+		width: '100%',
+	}
+
 	return (
 		<>
 			<div className='appbar-inner'>
@@ -81,12 +89,12 @@ function AppBar() {
 			<ul className={`appbar-list ${burgerToggle ? 'active' : ''}`}>
 				{menuData.map((item, i) => {
 					return (
-						<li key={i} className='appbar-item'>
+						<li key={i} style={{ background: item.link === router.pathname ? "#B6B3C7" : ""}} className="appbar-item">
 							<div style={{ marginRight: '10px' }} className='appbar-icon'>
 								{item.icon}
 							</div>
 							<Link
-								style={{ color: 'rgb(89, 89, 89)', width: '100%' }}
+							style={style}
 								href={item.link}>
 								{item.label}
 							</Link>

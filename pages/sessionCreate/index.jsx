@@ -27,7 +27,6 @@ export default function ArticleCreate() {
   },[reFetch])
 
 	const onSubmit = (values) => {
-		console.log('values', values);
 		const token = localStorage.getItem('token');
 		const options = {
 			method: 'POST',
@@ -65,14 +64,12 @@ export default function ArticleCreate() {
 		await fetch(`${BASE_URL}/api/v1/session/delete/${id}`, options)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('deleteData', data);
         if(data.status == 200){
           setReFetch(p => !p)
         }
 			});
 	};
 
-  console.log('sessionGet', sessionGet);
 
 	const columns = [
 		{

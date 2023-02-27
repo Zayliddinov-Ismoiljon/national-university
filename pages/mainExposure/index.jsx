@@ -21,7 +21,6 @@ function MainExposure() {
 			.then((response) => response.json())
 			.then((data) => {
 				setMainexposure(data.body);
-				console.log('data', data);
 			});
 	}, []);
 

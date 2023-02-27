@@ -123,7 +123,6 @@ function ArticleCheck() {
 				columns={columns}
 				rowSelection={{
 					onSelect(value) {
-						console.log(value);
 						acceptFunc(value.key);
 					},
 				}}

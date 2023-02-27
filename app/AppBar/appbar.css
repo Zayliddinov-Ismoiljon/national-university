@@ -10,6 +10,10 @@
   font-size: 18px;
 }
 
+.active{
+  background-color: blueviolet;
+}
+
 .appbar-item:hover{
   background-color: rgb(237, 235, 235);
 }

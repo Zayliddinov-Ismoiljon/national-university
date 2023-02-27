@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from "react";
-import Header from "../../app/Header";
-import { BASE_URL } from "../api";
+import { useEffect, useState } from 'react';
+import Header from '../../app/Header';
+import { BASE_URL } from '../api';
 
 function Media() {
 	const [media, setMedia] = useState([]);
@@ -13,10 +13,7 @@ function Media() {
 			headers: {},
 		};
 
-		fetch(
-			`${BASE_URL}/api/v1/media/getAll`,
-			options,
-		)
+		fetch(`${BASE_URL}/api/v1/media/getAll`, options)
 			.then((response) => response.json())
 			.then((data) => {
 				setMedia(data.body);

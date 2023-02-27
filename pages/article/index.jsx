@@ -76,13 +76,11 @@ export default function Article() {
 			)
 				.then((response) => response.json())
 				.then((data) => {
-					console.log('articlaData', data);
 					setArticle(data.body)
 				});
 		}, [reFetch]);
 
 	const onSubmit = (values) => {
-		console.log('value', values);
 		const token = localStorage.getItem('token');
 
 		const formdata = {};
@@ -116,9 +114,7 @@ export default function Article() {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('SpkersData', data);
 				let id = data.body;
-				console.log('id==>', id);
 				const formData = new FormData();
 				const file = document.querySelector('input[type="file"]').files[0];
 				formData.append('file', file);
@@ -162,7 +158,6 @@ export default function Article() {
 		fetch(`${BASE_URL}/api/v1/article/delete/${id}`, options)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('deleteData', data);
         if(data.status == 200){
           setReFetch(p => !p)
         }

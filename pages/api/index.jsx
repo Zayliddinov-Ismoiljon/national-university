@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://national-university.herokuapp.com'
+export const BASE_URL = 'http://ec2-18-181-189-44.ap-northeast-1.compute.amazonaws.com:8080'

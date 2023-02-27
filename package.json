@@ -16,6 +16,7 @@
     "classnames": "^2.3.2",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "i18next": "^22.4.10",
     "moment": "^2.29.4",
     "next": "13.1.6",
     "react": "18.2.0",

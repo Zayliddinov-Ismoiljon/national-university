@@ -37,7 +37,6 @@ const Register = () => {
 					message.error(data?.friendlyMessage)
 				}
 			}).catch((error) => {
-				console.log(error);
 				message.error(error.friendlyMessage);
 			});
 	};

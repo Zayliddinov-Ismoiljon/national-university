@@ -113,9 +113,7 @@ function SpekearsCreate() {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('SpkersData', data);
 				let id = data.body;
-				console.log('id==>', id);
 				const formData = new FormData();
 				const file = document.querySelector('input[type="file"]').files[0];
 				formData.append('file', file);

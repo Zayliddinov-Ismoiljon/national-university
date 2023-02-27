@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, message } from "antd";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,7 +12,6 @@ function Login () {
 	const [me, setMe] = useState([]);
 
 	const onSubmit = (values) => {
-		console.log('Success:', values);
 
 		const options = {
 			method: 'POST',
@@ -38,7 +37,6 @@ function Login () {
 					message.error(data.friendlyMessage)
 				}
 			}).catch((error) => {
-				console.log(error);
 				message.error(error.friendlyMessage);
 			});
 	};
@@ -72,10 +70,12 @@ function Login () {
 		console.log('Failed:', errorInfo);
 	};
 
+	
+
 	return (
 		<div class='vid-container'>
 			<img
-				src='https://i.pinimg.com/originals/5a/c8/f7/5ac8f72faa2c8a7b37ab20acdf9b8d0f.jpg'
+				src='https://static.vecteezy.com/system/resources/previews/014/326/974/original/laboratorium-with-conducting-research-scientific-experimentation-and-measurement-in-a-lab-in-flat-cartoon-hand-drawn-templates-illustration-vector.jpg'
 				alt='image'
 				className='bgvid back'
 			/>

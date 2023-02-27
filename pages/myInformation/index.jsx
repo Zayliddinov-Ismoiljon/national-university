@@ -58,7 +58,6 @@ export default function MyInfotmation() {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				console.log('editData', data);
 			});
 	};
 

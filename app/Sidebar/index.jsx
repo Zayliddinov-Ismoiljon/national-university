@@ -6,9 +6,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useMemo, useState } from 'react';
 import { FaUserAlt, FaUserTie } from 'react-icons/fa';
-import {BiLogOutCircle} from 'react-icons/bi'
-import {MdArticle, MdOutlineCases} from 'react-icons/md'
-import {GiHamburgerMenu} from 'react-icons/gi'
+import { BiLogOutCircle } from 'react-icons/bi';
+import { MdArticle, MdOutlineCases } from 'react-icons/md';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const menuItems = [
 	{
@@ -33,10 +33,8 @@ const menuItems = [
 		id: 4,
 		label: (
 			<Button
-			style={{border:'none', backgroundColor:'transparent'}}
-			className={classNames(
-				'text-md font-medium text-text-light',
-			)}
+				style={{ border: 'none', backgroundColor: 'transparent' }}
+				className={classNames('text-md font-medium text-text-light')}
 				onClick={() => {
 					localStorage.removeItem('token');
 				}}>
@@ -53,22 +51,7 @@ export default function Sidebar() {
 
 	const [isCollapsible, setIsCollapsible] = useState(false);
 
-	const [btnToggle, setBtnToggle] = useState(false)
-
-	const wrapperClasses = classNames(
-		'h-screen px-4 pt-8 pb-4 bg-primary flex justify-between flex-col w-80',
-		{
-			['w-90']: !toggleCollapse,
-			['w-10']: toggleCollapse,
-		},
-	);
-
-	const collapseIconClasses = classNames(
-		'p-4 rounded bg-primary absolute right-0',
-		{
-			'rotate-180': toggleCollapse,
-		},
-	);
+	const [btnToggle, setBtnToggle] = useState(false);
 
 	const router = useRouter();
 
@@ -90,8 +73,9 @@ export default function Sidebar() {
 		setIsCollapsible(!isCollapsible);
 	};
 
-	const handleSidebarToggle = () => {
-		setToggleCollapse(!toggleCollapse);
+	const style = {
+		backgroundColor: 'red',
+		color: 'white',
 	};
 
 	return (
@@ -100,12 +84,11 @@ export default function Sidebar() {
 			onMouseEnter={onMouseOver}
 			onMouseLeave={onMouseOver}
 			style={{ transition: 'width 300ms cubic-bezier(0.2,0,0,1) 0s' }}
-			className='side-bar'
-			>
+			className='side-bar'>
 			<div className='flex flex-col'>
 				<div className='flex items-center justify-between relative'>
 					<div className='flex items-center pl-1 gap-4'>
-						<FaUserAlt size={30} color='white'/>
+						<FaUserAlt size={30} color='white' />
 						<span
 							className={classNames('mt-2 text-lg font-medium text-light', {
 								hidden: toggleCollapse,
@@ -113,19 +96,34 @@ export default function Sidebar() {
 							Foydalanuvchi
 						</span>
 					</div>
-					<button onClick={()=>setBtnToggle(p => !p)}  className='bar-burgerbtn'>
-						<GiHamburgerMenu size={30} color='white'/>
+					<button
+						onClick={() => setBtnToggle((p) => !p)}
+						className='bar-burgerbtn'>
+						<GiHamburgerMenu size={30} color='white' />
 					</button>
 				</div>
-				<div style={{marginTop:'50px'}} className={`menu-item ${btnToggle ? 'active' : ''}`}>
+				<div
+					style={{ marginTop: '50px' }}
+					className={`menu-item ${btnToggle ? 'active' : ''}`}>
 					{menuItems.map(({ icon: Icon, ...menu }) => {
 						const classes = getNavItemClasses(menu);
 						return (
 							<div className={classes}>
-								<Link href={menu.link} style={{ width: '100%' }} className='side-link'>
+								<Link
+									href={menu.link}
+									style={{
+										width: '100%',
+										backgroundColor:
+											router.pathname === menu.link ? '#ebf761f8' : '',
+									}}
+									className='side-link'>
 									<div className='flex py-2 px-1 items-center w-full h-full'>
 										<div>
-											<Icon  size={20} style={{marginRight:'10px'}} className='side-icon'/>
+											<Icon
+												size={20}
+												style={{ marginRight: '10px' }}
+												className='side-icon'
+											/>
 										</div>
 										{!toggleCollapse && (
 											<span
@@ -146,5 +144,3 @@ export default function Sidebar() {
 		</div>
 	);
 }
-
-
