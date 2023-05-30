@@ -35,39 +35,41 @@ export default function Home() {
 						<ul className='article__list'>
 							<li className='article__item'>
 								<img
-									src='https://chem-bukhsu.uz/uz/images/sponsor_1.png'
+									src='https://nuu.uz/wp-content/themes/nuutheme/assets/images/dest/105.png'
 									alt='image'
 									className='article__itemimg'
 								/>
 							</li>
 							<li className='article__item'>
 								<img
-									src='https://chem-bukhsu.uz/uz/images/sponsor_3.png'
+									src='https://nuu.uz/wp-content/themes/nuutheme/assets/images/dest/logo.png'
+									alt='image'
+									className='article__itemimg'
+									style={{width: 250, height: 200}}
+								/>
+							</li>
+							<li className='article__item'>
+								<img
+									src='https://sun9-77.userapi.com/c318/g394429/a_69754b86.jpg'
 									alt='image'
 									className='article__itemimg'
 								/>
 							</li>
 							<li className='article__item'>
 								<img
-									src='https://chem-bukhsu.uz/uz/images/sponsor_4.png'
+									src='https://www.nu.edu/wp-content/uploads/2022/07/Group-1886@2x.png?fit=1594%2C347'
 									alt='image'
 									className='article__itemimg'
+									style={{width:270, height: 90}}
 								/>
 							</li>
-							<li className='article__item'>
-								<img
-									src='https://chem-bukhsu.uz/uz/images/sponsor_5.png'
-									alt='image'
-									className='article__itemimg'
-								/>
-							</li>
-							<li className='article__item'>
+							{/* <li className='article__item'>
 								<img
 									src='https://chem-bukhsu.uz/uz/images/sponsor_6.png'
 									alt='image'
 									className='article__itemimg'
 								/>
-							</li>
+							</li> */}
 						</ul>
 						<h1 className='article__title'>
 							Funksional polimerlarning fundamental va amaliy jihatlari

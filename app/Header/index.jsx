@@ -13,9 +13,10 @@ function Header() {
 				<nav className='nav'>
 					<a href='/'>
 						<img
-							src='https://chem-bukhsu.uz/uz/images/logo.png'
+							src='https://upload.wikimedia.org/wikipedia/commons/4/4e/National_University_of_Uzbekistan_Logo.png'
 							alt='logo'
 							className='logo'
+							style={{width:100, height: 100, objectFit:'cover'}}
 						/>
 					</a>
 					<ul className='nav__list'>
